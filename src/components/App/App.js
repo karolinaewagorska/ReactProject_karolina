@@ -3,7 +3,6 @@ import Footer from '../Footer/Footer';
 import InputItem from '../InputItem/InputItem';
 import ItemList from '../ItemList/ItemList';
 
-
 const App = () => ( <div>
   <h1>TO DO LIST</h1>
   <InputItem />
@@ -13,6 +12,3 @@ const App = () => ( <div>
 );
 
 export default App;
-
-
-

@@ -1,6 +1,6 @@
 import React from 'react';
 
 
-const InputItem = () => (<p>New Task</p>);
+const InputItem = () => (<p>Current Task</p>);
 
 export default InputItem;

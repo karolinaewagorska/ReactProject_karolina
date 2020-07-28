@@ -1,12 +1,11 @@
 import React from 'react';
 import Item from '../Item/Item';
 
-
 const ItemList = ({ todoItem }) => (<ul>
-    <li><Item todoItem={todoItem} /></li>
-    <li><Item todoItem={'Get new job'} /></li>
-    <li><Item todoItem={'Find new friend'} /></li>
-    <li><Item todoItem={'Learn new language'} /></li>
+    <li><Item todoItem={todoItem[0]} /></li>
+    <li><Item todoItem={todoItem[1]} /></li>
+    <li><Item todoItem={todoItem[2]} /></li>
+    <li><Item todoItem={todoItem[3]} /></li>
 </ul>);
 
 export default ItemList;

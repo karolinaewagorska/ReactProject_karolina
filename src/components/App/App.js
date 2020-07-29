@@ -6,8 +6,8 @@ import ItemList from '../ItemList/ItemList';
 const App = () => ( <div>
   <h1>TO DO LIST</h1>
   <InputItem />
-  <ItemList />
-  <Footer />
+  <ItemList todoItem={todoItem} />
+  <Footer count={4} />
 </div>
 );
 

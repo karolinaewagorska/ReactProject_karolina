@@ -6,16 +6,16 @@ import ItemList from '../ItemList/ItemList';
 const App = () => {
   const items = [
     {
-      value: 'Create new app'
+      value: "Create new app"
     },
     {
-      value: 'Get new job'
+      value: "Get new job"
     },
     {
-      value: 'Find new friends'
+      value: "Find new friends"
     },
     {
-      value: 'Learn new language'
+      value: "Learn new language"
     }
   ];
 
@@ -26,6 +26,6 @@ const App = () => {
     <ItemList items={items} />
     <Footer count={4} />
   </div>);
-}
+};
 
 export default App;

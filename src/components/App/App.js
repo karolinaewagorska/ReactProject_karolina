@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from '../Footer/Footer';
 import InputItem from '../InputItem/InputItem';
 import ItemList from '../ItemList/ItemList';
-import './App.css';
+import "./App.css";
 
 const App = () => {
   const items = [

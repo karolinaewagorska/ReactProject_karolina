@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "./Footer.module.css"
+import styles from "./Footer.module.css";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 

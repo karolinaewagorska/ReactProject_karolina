@@ -1,11 +1,10 @@
-.item {
-  display: grid;
-}
-
-.checkbox {
-  display: inline;
+.list {
+  list-style-type: none;
+  text-align: left;
 }
 
 .deleted {
-  display: inline;
+  position: relative;
+  float: right;
+  top: 8px;
 }

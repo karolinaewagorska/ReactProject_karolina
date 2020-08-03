@@ -1,8 +1,8 @@
 .wrap {
   margin: auto;
-  width: 300px;
+  width: 500px;
   border: 1px solid;
-  border-radius: 10%;
+  border-radius: 8%;
   padding: 50px;
 }
 

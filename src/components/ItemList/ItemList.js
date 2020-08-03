@@ -6,10 +6,8 @@ import DeleteRoundedIcon from "@material-ui/icons/DeleteRounded";
 
 
 const ItemList = ({ items }) => (<ul>
-    {items.map((item) => <li classname={styles.item} key={item.value}>
-        <div classname={styles.checkbox}>
-            <Checkbox />
-        </div>
+    {items.map((item) => <li key={item.value} className={styles.list}>
+        <Checkbox />
         <Item 
             value={item.value} 
             isDone={item.isDone} />  

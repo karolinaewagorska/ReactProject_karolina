@@ -7,16 +7,20 @@ import styles from "./App.module.css";
 const App = () => {
   const items = [
     {
-      value: "Create new app"
+      value: "Create new app",
+      isDone: true
     },
     {
-      value: "Get new job"
+      value: "Get new job",
+      isDone: false
     },
     {
-      value: "Find new friends"
+      value: "Find new friends",
+      isDone: true
     },
     {
-      value: "Learn new language"
+      value: "Learn new language",
+      isDone: false
     }
   ];
 

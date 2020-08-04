@@ -3,6 +3,8 @@ import Footer from '../Footer/Footer';
 import InputItem from '../InputItem/InputItem';
 import ItemList from '../ItemList/ItemList';
 import styles from "./App.module.css";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
 
 class App extends React.Component {
   state = {
@@ -26,13 +28,19 @@ class App extends React.Component {
     ]
   };
 
+  onClickDone = isDone => console.log(isDone);
+
   render() {
     return (
       <div className={styles.wrap}>
-        <h1 className={styles.title}>TO DO LIST</h1>
-        <InputItem />
-        <ItemList items={this.state.items} />
-        <Footer count={4} />
+        <Card>
+          <CardContent>
+            <h1 className={styles.title}>TO DO LIST</h1>
+            <InputItem />
+            <ItemList items={this.state.items} onClickDone={this.onClickDone}/>
+            <Footer count={4} />
+          </CardContent>
+        </Card>
       </div>);
     }
 };

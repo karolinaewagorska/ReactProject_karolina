@@ -43,6 +43,6 @@ class App extends React.Component {
         </Card>
       </div>);
     }
-};
+}
 
 export default App;

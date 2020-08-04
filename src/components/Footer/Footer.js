@@ -10,8 +10,8 @@ const Footer = ({ count }) => (
     </div>
     <div className={styles.tabs}>
         <Tabs
-            indicatorColor="blue"
-            textColor="black"
+            indicatorColor="primary"
+            textColor="primary"
             variant="fullWidth"
             aria-label="full width tabs example"
             >

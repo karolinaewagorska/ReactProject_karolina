@@ -1,0 +1,11 @@
+.text {
+  text-align: center;
+  color: gray;
+  font-family: 'Courier New', Courier, monospace;
+  border-top: 2px solid;
+  padding-top: 10px;
+}
+
+.tabs {
+  padding-top: 20px;
+}

@@ -1,0 +1,10 @@
+.list {
+  list-style-type: none;
+  text-align: left;
+}
+
+.deleted {
+  position: relative;
+  float: right;
+  top: 8px;
+}

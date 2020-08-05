@@ -28,7 +28,7 @@ class App extends React.Component {
     ]
   };
 
-  onClickDone = (isDone) => console.log(isDone);
+  onClickDone = (isDone) => console.log(isDone); /* eslint-disable-line no-console */
 
   render() {
     return (

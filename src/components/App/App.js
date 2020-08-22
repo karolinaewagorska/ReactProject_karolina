@@ -5,7 +5,6 @@ import ItemList from '../ItemList/ItemList';
 import styles from "./App.module.css";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
-import { template } from '@babel/core';
 
 class App extends React.Component {
   state = {

@@ -5,30 +5,44 @@ import ItemList from '../ItemList/ItemList';
 import styles from "./App.module.css";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
+import { template } from '@babel/core';
 
 class App extends React.Component {
   state = {
     items: [
       {
         value: "Create new app",
-        isDone: true
+        isDone: true,
+        id: 1
       },
       {
         value: "Get new job",
-        isDone: false
+        isDone: false,
+        id: 2
       },
       {
         value: "Find new friends",
-        isDone: true
+        isDone: true,
+        id: 3
       },
       {
         value: "Learn new language",
-        isDone: false
+        isDone: false,
+        id: 4
       }
     ]
   };
 
-  onClickDone = (isDone) => console.log(isDone); /* eslint-disable-line no-console */
+  onClickDone = id => {
+    const newItemList = this.state.items.map(item => {
+      const newItem = { ...item };
+      if (item.id === id) {
+        newItem.isDone = !item.isDone;
+      }
+      return newItem;
+    })
+    this.setState({ items: newItemList });
+  };
 
   render() {
     return (

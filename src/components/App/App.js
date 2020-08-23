@@ -48,7 +48,7 @@ class App extends React.Component {
   onClickDelete = (id) => this.setState((state) => ({ items: state.items.filter((item) => item.id !== id)}));
 
   onClickAdd = (value) => {
-    if (value === '') {
+    if (value === "") {
       this.setState((state) => ({error: true}));
     } else {
       this.setState((state) => ({
@@ -62,7 +62,8 @@ class App extends React.Component {
       ],
       count: state.count + 1,
       error: false
-    }))};
+      }));
+    }
   }; 
   
   render() {

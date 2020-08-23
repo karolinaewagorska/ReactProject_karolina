@@ -11,25 +11,41 @@ class App extends React.Component {
     items: [
       {
         value: "Create new app",
-        isDone: true
+        isDone: true,
+        id: 1
       },
       {
         value: "Get new job",
-        isDone: false
+        isDone: false,
+        id: 2
       },
       {
         value: "Find new friends",
-        isDone: true
+        isDone: true,
+        id: 3
       },
       {
         value: "Learn new language",
-        isDone: false
+        isDone: false,
+        id: 4
       }
     ]
   };
 
-  onClickDone = (isDone) => console.log(isDone); /* eslint-disable-line no-console */
+  onClickDone = (id) => {
+    const newItemList = (this.state.items.map((item) => {
+      const newItem = { ...item };
+      if (item.id === id) {
+        newItem.isDone = !item.isDone;
+      }
+      return newItem;
+    })
+    );
+    this.setState({ items: newItemList });
+  };
 
+  onClickDelete = (id) => this.setState((state) => ({ items: state.items.filter((item) => item.id !== id)}));
+  
   render() {
     return (
       <div className={styles.wrap}>
@@ -37,7 +53,11 @@ class App extends React.Component {
           <CardContent>
             <h1 className={styles.title}>TO DO LIST</h1>
             <InputItem />
-            <ItemList items={this.state.items} onClickDone={this.onClickDone}/>
+            <ItemList 
+              items={this.state.items} 
+              onClickDone={this.onClickDone} 
+              onClickDelete={this.onClickDelete}
+            />
             <Footer count={4} />
           </CardContent>
         </Card>

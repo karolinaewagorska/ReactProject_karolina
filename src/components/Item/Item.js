@@ -6,10 +6,11 @@ import DeleteRoundedIcon from "@material-ui/icons/DeleteRounded";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 
-const Item = ({ value, isDone, onClickDone }) => (
+const Item = ({ value, isDone, onClickDone, id, onClickDelete }) => (
     <ListItem>
         <Checkbox 
-            onClick={() => onClickDone(isDone)}
+            checked={isDone}
+            onClick={() => onClickDone(id)}
         />
         <div className={
             classnames({
@@ -20,7 +21,9 @@ const Item = ({ value, isDone, onClickDone }) => (
             {value}
         </div>
         <ListItemSecondaryAction>
-            <DeleteRoundedIcon /> 
+            <DeleteRoundedIcon 
+                onClick={() => onClickDelete(id)}
+            /> 
         </ListItemSecondaryAction>
     </ListItem>);
 

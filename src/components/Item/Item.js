@@ -9,6 +9,7 @@ import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 const Item = ({ value, isDone, onClickDone, id, onClickDelete }) => (
     <ListItem>
         <Checkbox 
+            checked={isDone}
             onClick={() => onClickDone(id)}
         />
         <div className={

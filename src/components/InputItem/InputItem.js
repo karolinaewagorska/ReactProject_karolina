@@ -1,17 +1,17 @@
 import React from 'react';
 import TextField from "@material-ui/core/TextField";
 import styles from "./InputItem.module.css";
-import Button from '@material-ui/core/Button';
+import Button from "@material-ui/core/Button";
 
 class InputItem extends React.Component {
     state = {
-        inputValue: '',
+        inputValue: "",
         error: false
     };
 
     onButtonClick = () => {
         this.setState({
-            inputValue: ''
+            inputValue: ""
         });
 
         this.props.onClickAdd(this.state.inputValue);
@@ -29,7 +29,7 @@ class InputItem extends React.Component {
                 variant="outlined"
                 value={this.state.inputValue}
                 error={this.props.error}
-                onChange={event => this.setState({ inputValue: event.target.value })}
+                onChange={(event) => this.setState({ inputValue: event.target.value })}
             />   
             <Button 
                 variant="contained"

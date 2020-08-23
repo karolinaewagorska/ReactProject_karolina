@@ -5,7 +5,6 @@ import ItemList from '../ItemList/ItemList';
 import styles from "./App.module.css";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
-import { awaitExpression } from '@babel/types';
 
 class App extends React.Component {
   state = {
@@ -52,7 +51,7 @@ class App extends React.Component {
     if (value === '') {
       this.setState((state) => ({error: true}));
     } else {
-      this.setState(state => ({
+      this.setState((state) => ({
         items: [
           ...state.items,
         {
@@ -63,7 +62,7 @@ class App extends React.Component {
       ],
       count: state.count + 1,
       error: false
-    }))}
+    }))};
   }; 
   
   render() {

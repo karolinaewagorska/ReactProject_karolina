@@ -27,6 +27,6 @@ const Footer = ({ count, doneCount }) => (
 Footer.defaultProps = {
     count: 0,
     doneCount: 666
-}
+};
 
 export default Footer;

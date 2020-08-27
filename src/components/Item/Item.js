@@ -10,15 +10,15 @@ import PropTypes from "prop-types";
 class Item extends React.Component {
 
     componentDidMount() {
-        console.log("componentDidMount")
+        console.log("component Did Mount");
     };
 
     componentDidUpdate() {
-        console.log("componentDidUpdate")
+        console.log("component Did Update");
     };
 
     componentWillUnmount() {
-        console.log("componentWillUnmount")
+        console.log("component Will Unmount");
     };
 
     render() {

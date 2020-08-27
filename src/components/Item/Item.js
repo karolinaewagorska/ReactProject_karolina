@@ -29,8 +29,8 @@ const Item = ({ value, isDone, onClickDone, id, onClickDelete }) => (
     </ListItem>);
 
 Item.propTypes = {
-    value: propTypes.string,
-    isDone: propTypes.bool
+    value: PropTypes.string,
+    isDone: PropTypes.bool
 }
 
 export default Item;

@@ -10,16 +10,16 @@ import PropTypes from "prop-types";
 class Item extends React.Component {
 
     componentDidMount() {
-        console.log("component Did Mount");
-    };
+        console.log('componentDidMount');
+    }
 
     componentDidUpdate() {
-        console.log("component Did Update");
-    };
+        console.log('componentDidUpdate');
+    }
 
     componentWillUnmount() {
-        console.log("component Will Unmount");
-    };
+        console.log('componentDidUpdate');
+    }
 
     render() {
         const { value, isDone, onClickDone, id, onClickDelete } = this.props;

@@ -2,6 +2,7 @@ import React from 'react';
 import styles from "./Footer.module.css";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
+import PropTypes from "prop-types";
 
 const Footer = ({ count, doneCount }) => (
 <div>
@@ -24,9 +25,9 @@ const Footer = ({ count, doneCount }) => (
 </div>
 );
 
-Footer.defaultProps = {
-    count: 0,
-    doneCount: 666
+Footer.propTypes = {
+    count: PropTypes.number.isRequired,
+    doneCount: PropTypes.number.isRequired
 };
 
 export default Footer;

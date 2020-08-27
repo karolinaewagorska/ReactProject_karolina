@@ -31,6 +31,6 @@ const Item = ({ value, isDone, onClickDone, id, onClickDelete }) => (
 Item.propTypes = {
     value: PropTypes.string,
     isDone: PropTypes.bool
-}
+};
 
 export default Item;

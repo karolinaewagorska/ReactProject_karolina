@@ -10,15 +10,15 @@ import PropTypes from "prop-types";
 class Item extends React.Component {
 
     componentDidMount() {
-        console.log('componentDidMount');
+        console.log("componentDidMount");
     }
 
     componentDidUpdate() {
-        console.log('componentDidUpdate');
+        console.log("componentDidUpdate");
     }
 
     componentWillUnmount() {
-        console.log('componentDidUpdate');
+        console.log("componentDidUpdate");
     }
 
     render() {
@@ -45,7 +45,7 @@ class Item extends React.Component {
                 </ListItemSecondaryAction>
             </ListItem>);
     }
-};
+}
 
 Item.propTypes = {
     value: PropTypes.string,

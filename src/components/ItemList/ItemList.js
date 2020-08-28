@@ -16,8 +16,7 @@ const ItemList = ({ items, onClickDone, onClickDelete }) => (<ul>
 </ul>);
 
 ItemList.propTypes = {
-    items: PropTypes.array.isRequired,
-    isDone: PropTypes.bool
+    items: PropTypes.array.isRequired
 };
 
 export default ItemList;

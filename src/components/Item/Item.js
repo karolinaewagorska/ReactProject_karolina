@@ -18,7 +18,7 @@ class Item extends React.Component {
     }
 
     componentWillUnmount() {
-        console.log("componentDidUpdate");
+        console.log("componentWillUnmount");
     }
 
     render() {

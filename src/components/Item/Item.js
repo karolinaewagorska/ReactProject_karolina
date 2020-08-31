@@ -7,26 +7,45 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import PropTypes from "prop-types";
 
-const Item = ({ value, isDone, onClickDone, id, onClickDelete }) => (
-    <ListItem>
-        <Checkbox 
-            checked={isDone}
-            onClick={() => onClickDone(id)}
-        />
-        <div className={
-            classnames({
-                [styles.item]: true,
-                [styles.done]: isDone
-            })
-        }>  
-            {value}
-        </div>
-        <ListItemSecondaryAction>
-            <DeleteRoundedIcon 
-                onClick={() => onClickDelete(id)}
-            /> 
-        </ListItemSecondaryAction>
-    </ListItem>);
+class Item extends React.Component {
+
+    componentDidMount() {
+        console.log("componentDidMount"); /* eslint-disable-line no-console */
+    }
+
+    componentDidUpdate() {
+        console.log("componentDidUpdate"); /* eslint-disable-line no-console */
+    }
+
+    componentWillUnmount() {
+        console.log("componentWillUnmount"); /* eslint-disable-line no-console */
+    }
+
+    render() {
+        const { value, isDone, onClickDone, id, onClickDelete } = this.props;
+
+        return (
+            <ListItem>
+                <Checkbox 
+                    checked={isDone}
+                    onClick={() => onClickDone(id)}
+                />
+                <div className={
+                    classnames({
+                        [styles.item]: true,
+                        [styles.done]: isDone
+                    })
+                }>  
+                {value}
+                </div>
+                <ListItemSecondaryAction>
+                    <DeleteRoundedIcon 
+                        onClick={() => onClickDelete(id)}
+                    /> 
+                </ListItemSecondaryAction>
+            </ListItem>);
+    }
+}
 
 Item.propTypes = {
     value: PropTypes.string,

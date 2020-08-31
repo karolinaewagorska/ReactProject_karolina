@@ -30,7 +30,8 @@ class App extends React.Component {
         id: 4
       }
     ],
-    count: 4
+    count: 4,
+    doneCount: 7
   };
 
   onClickDone = (id) => {
@@ -81,7 +82,10 @@ class App extends React.Component {
               onClickDone={this.onClickDone} 
               onClickDelete={this.onClickDelete}
             />
-            <Footer count={4} />
+            <Footer 
+              count={this.state.count} 
+              doneCount={this.state.doneCount}
+            />
           </CardContent>
         </Card>
       </div>);

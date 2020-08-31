@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Footer from '../Footer/Footer';
 import InputItem from '../InputItem/InputItem';
 import ItemList from '../ItemList/ItemList';
@@ -6,8 +6,8 @@ import styles from "./App.module.css";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 
-class App extends React.Component {
-  state = {
+const App = () => {
+  const initialState = {
     items: [
       {
         value: "Create new app",
@@ -31,11 +31,23 @@ class App extends React.Component {
       }
     ],
     count: 4,
-    doneCount: 7
+    error: false
   };
 
-  onClickDone = (id) => {
-    const newItemList = (this.state.items.map((item) => {
+  const [items, setItems] = useState(initialState.items);
+  const [count, setCount] = useState(initialState.count);
+  const [error, setError] = useState(initialState.error);
+
+  useEffect(() => {
+    console.log("componentDidUpdate"); /* eslint-disable-line no-console */
+  });
+
+  useEffect(() => {
+    console.log("componentDidMount"); /* eslint-disable-line no-console */
+  }, []);
+
+  const onClickDone = (id) => {
+    const newItemList = (items.map((item) => {
       const newItem = { ...item };
       if (item.id === id) {
         newItem.isDone = !item.isDone;
@@ -43,53 +55,53 @@ class App extends React.Component {
       return newItem;
     })
     );
-    this.setState({ items: newItemList });
+    setItems(newItemList);
   };
 
-  onClickDelete = (id) => this.setState((state) => ({ items: state.items.filter((item) => item.id !== id)}));
+  const onClickDelete = (id) => {
+    const newItems = items.filter((item) => item.id !== id);
+    setItems(newItems);
+    setCount((count) => count - 1);
+  };
 
-  onClickAdd = (value) => {
+
+  const onClickAdd = (value) => {
     if (value === "") {
-      this.setState((state) => ({error: true}));
+      setError((error)=> true)
     } else {
-      this.setState((state) => ({
-        items: [
-          ...state.items,
+     const newItems = [
+      ...items,
         {
           value,
           isDone: false,
-          id: state.count + 1
-        }
-      ],
-      count: state.count + 1,
-      error: false
-      }));
+          id: count + 1
+        } 
+    ];
+    setItems(newItems);
+    setCount((count) => count + 1);
     }
-  }; 
+  };
   
-  render() {
     return (
       <div className={styles.wrap}>
         <Card>
           <CardContent>
             <h1 className={styles.title}>TO DO LIST</h1>
             <InputItem 
-              onClickAdd={this.onClickAdd} 
-              error={this.state.error}
+              onClickAdd={onClickAdd} 
+              error={error}
             />
             <ItemList 
-              items={this.state.items} 
-              onClickDone={this.onClickDone} 
-              onClickDelete={this.onClickDelete}
+              items={items} 
+              onClickDone={onClickDone} 
+              onClickDelete={onClickDelete}
             />
             <Footer 
-              count={this.state.count} 
-              doneCount={this.state.doneCount}
+              count={count} 
             />
           </CardContent>
         </Card>
       </div>);
-    }
-}
+};
 
 export default App;

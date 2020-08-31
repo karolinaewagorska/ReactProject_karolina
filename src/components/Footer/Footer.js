@@ -4,11 +4,10 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import PropTypes from "prop-types";
 
-const Footer = ({ count, doneCount }) => (
+const Footer = ({ count }) => (
 <div>
     <div className={styles.text}>
         <p>We have { count } more tasks to do. Start working!</p>
-        <p>But you have already done { doneCount } tasks! Great job!</p>
     </div>
     <div className={styles.tabs}>
         <Tabs
@@ -26,8 +25,7 @@ const Footer = ({ count, doneCount }) => (
 );
 
 Footer.propTypes = {
-    count: PropTypes.number.isRequired,
-    doneCount: PropTypes.number.isRequired
+    count: PropTypes.number.isRequired
 };
 
 export default Footer;

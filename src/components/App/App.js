@@ -67,7 +67,7 @@ const App = () => {
 
   const onClickAdd = (value) => {
     if (value === "") {
-      setError((error)=> true)
+      setError((error) => true);
     } else {
      const newItems = [
       ...items,

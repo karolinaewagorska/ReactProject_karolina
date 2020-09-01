@@ -27,6 +27,6 @@ const App = () => (
       </Card>
 
     </div>
-  </Router>)
+  </Router>);
 
 export default App;

@@ -12,8 +12,8 @@ class Contacts extends React.Component {
                 <Typography variant="body2" color="textSecondary" component="p">
                     London School of Economics and Political Science <br /> Houghton Street <br /> London <br /> UK <br />
                 </Typography>
-            </CardContent>)
+            </CardContent>);
     }
-};
+}
 
 export default Contacts;

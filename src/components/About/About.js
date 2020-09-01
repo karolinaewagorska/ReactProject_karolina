@@ -15,8 +15,8 @@ class About extends React.Component {
                     And he's gotta be fast <br />
                     And he's gotta be fresh from the fight. <br />
                 </Typography>
-            </CardContent>)
+            </CardContent>);
     }
-};
+}
 
 export default About;

@@ -96,8 +96,7 @@ const Todo = () => {
             <Footer 
               count={count} 
             />
-        </CardContent>
-    )
-};
+        </CardContent>);
+}
 
 export default Todo;

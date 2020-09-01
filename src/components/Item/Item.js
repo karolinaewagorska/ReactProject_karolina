@@ -10,15 +10,11 @@ import PropTypes from "prop-types";
 class Item extends React.Component {
 
     componentDidMount() {
-        console.log("componentDidMount"); /* eslint-disable-line no-console */
-    }
-
-    componentDidUpdate() {
-        console.log("componentDidUpdate"); /* eslint-disable-line no-console */
+        this.timerId = setInterval(() => console.log("interval"), 1000); /* eslint-disable-line no-console */
     }
 
     componentWillUnmount() {
-        console.log("componentWillUnmount"); /* eslint-disable-line no-console */
+        clearInterval(this.timerId);
     }
 
     render() {

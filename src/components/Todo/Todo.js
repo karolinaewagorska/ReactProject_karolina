@@ -37,14 +37,6 @@ const Todo = () => {
   const [count, setCount] = useState(initialState.count);
   const [error, setError] = useState(initialState.error);
 
-  useEffect(() => {
-    console.log("componentDidUpdate"); /* eslint-disable-line no-console */
-  });
-
-  useEffect(() => {
-    console.log("componentDidMount"); /* eslint-disable-line no-console */
-  }, []);
-
   const onClickDone = (id) => {
     const newItemList = (items.map((item) => {
       const newItem = { ...item };

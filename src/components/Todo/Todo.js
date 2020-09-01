@@ -97,6 +97,6 @@ const Todo = () => {
               count={count} 
             />
         </CardContent>);
-}
+};
 
 export default Todo;

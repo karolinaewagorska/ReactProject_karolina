@@ -2,7 +2,7 @@ import React from "react";
 import CardContent from "@material-ui/core/CardContent";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { Octokit } from "@octokit/rest";
-import styles from "./About.module.css"
+import styles from "./About.module.css";
 
 
 const octokit = new Octokit();
@@ -35,7 +35,7 @@ class About extends React.Component {
         }).then(({data}) => {
             this.setState({
                 userData: data,
-                isLoading: false})
+                isLoading: false});
         }).catch((error) => {
             this.setState({
                 isLoading: false,
@@ -61,7 +61,7 @@ class About extends React.Component {
                             <div>
                                 <p>My repositories:</p>
                                 <ol>
-                                    {repoList.map(repo => (<li key={repo.id}  className={styles.repolist} >
+                                    {repoList.map((repo) => (<li key={repo.id}  className={styles.repolist} >
                                         <a href ={repo.html_url} target="_blank">{repo.name}</a>
                                     </li>))}
                                 </ol>

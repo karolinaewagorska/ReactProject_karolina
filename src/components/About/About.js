@@ -22,7 +22,7 @@ class About extends React.Component {
         }).then(({data}) => {
             this.setState({
                 repoList: data,
-                isLoading: false})
+                isLoading: false});
         }).catch((error) => {
             this.setState({
                 isLoading: false,

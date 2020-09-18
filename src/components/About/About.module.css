@@ -1,0 +1,28 @@
+.wrap {
+  text-align: left;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.preload {
+  position: relative;
+  left: 4em;
+  top: 2em;
+}
+
+.title {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.repo {
+  font-size: 25px;
+  font-weight: 300;
+  margin: 0 auto;
+}
+
+.repolist {
+  font-size: 20px;
+  font-weight: 200;
+  margin-bottom: 10px;
+}

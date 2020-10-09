@@ -40,10 +40,9 @@ class About extends React.Component {
     requestRepolist = (perPage, selectedPage) => {
         octokit.repos.listForUser({
             username: "karolinaewagorska",
-            per_page: perPage,
+            perPage: perPage,
             page: selectedPage
         }).then(({data}) => {
-            console.log(data)
             this.setState({
                 repoList: data,
                 isLoading: false,
@@ -112,7 +111,7 @@ class About extends React.Component {
                     }
             </div>
         )
-    }
+    };
 }
 
 export default About;

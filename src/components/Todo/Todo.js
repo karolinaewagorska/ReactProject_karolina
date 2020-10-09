@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import Footer from '../Footer/Footer';
-import InputItem from '../InputItem/InputItem';
-import ItemList from '../ItemList/ItemList';
+import React, { useState } from "react";
+import Footer from "../Footer/Footer";
+import InputItem from "../InputItem/InputItem";
+import ItemList from "../ItemList/ItemList";
 import CardContent from "@material-ui/core/CardContent";
 import styles from "./Todo.module.css";
 
@@ -36,17 +36,17 @@ const Todo = () => {
   const onClickDelete = (id) => {
     const newItems = item.filter((item) => item.id !== id);
     setItem(newItems);
-    setCount(count - 1)
+    setCount(count - 1);
   };
 
 
   const onClickAdd = (value) => {
-    const newDict = []
-    for (let i in item){
-      for (let j in item[i]) {
+    const newDict = [];
+    for (let i in (item)){
+      for (let j in (item[i])) {
           newDict.push(item[i][j]);
         }
-      };
+      }
 
     if (value === "" || newDict.includes(value)) {
       setError((error) => true);

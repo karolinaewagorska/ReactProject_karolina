@@ -1,42 +1,42 @@
 .wrap {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
 }
 
 .title {
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 300;
-    font-size: 30px;
-    margin-bottom: 15px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 300;
+  font-size: 30px;
+  margin-bottom: 15px;
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .contact {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 300;
-    font-size: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 300;
+  font-size: 30px;
 }
 
 .icon {
-    display: block;
+  display: block;
 }
 
 .link {
-    color: black;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 300;
+  color: black;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 300;
 }

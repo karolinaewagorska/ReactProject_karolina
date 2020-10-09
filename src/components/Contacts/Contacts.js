@@ -1,8 +1,8 @@
 import React from "react";
-import FacebookIcon from '@material-ui/icons/Facebook';
-import MailIcon from '@material-ui/icons/Mail';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import LocalPhoneIcon from '@material-ui/icons/LocalPhone';
+import FacebookIcon from "@material-ui/icons/Facebook";
+import MailIcon from "@material-ui/icons/Mail";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import LocalPhoneIcon from "@material-ui/icons/LocalPhone";
 import styles from "./Contacts.module.css";
 
 class Contacts extends React.Component {

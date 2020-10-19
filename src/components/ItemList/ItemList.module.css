@@ -2,3 +2,15 @@
   list-style-type: none;
   text-align: left;
 }
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media (max-width: 1080px) {
+  .list {
+    width: 70%;
+    margin: 0 auto;
+  }
+}

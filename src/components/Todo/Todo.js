@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Footer from "../Footer/Footer";
 import InputItem from "../InputItem/InputItem";
 import ItemList from "../ItemList/ItemList";
@@ -7,22 +7,22 @@ import styles from "./Todo.module.css";
 
 const Todo = () => {
   const initialState = {
-    item: JSON.parse(localStorage.getItem("item")) || [],
+    items: JSON.parse(localStorage.getItem("items")) || [],
     filter: "all",
     count: JSON.parse(localStorage.getItem("count")) || 0,
-    toDo: "",
-    error: false,
-    errorMessage: "Something went wrong..."
+    item: ""
   };
 
-  const [item, setItem] = useState(initialState.item);
+  const [items, setItem] = useState(initialState.items);
   const [count, setCount] = useState(initialState.count);
   const [filter, setFilter] = useState(initialState.filter);
-  const [error, setError] = useState(initialState.error);
-  const [errorMessage, setErrorMessage] = useState(initialState.errorMessage);
+
+  useEffect(() => {
+    localStorage.setItem("items", JSON.stringify(items));
+  }, [items]);
 
   const onClickDone = (id) => {
-    const newItemList = (item.map((item) => {
+    const newItemList = (items.map((item) => {
       const newItem = { ...item };
       if (newItem.id === id) {
         newItem.isDone = !newItem.isDone;
@@ -34,26 +34,15 @@ const Todo = () => {
   };
 
   const onClickDelete = (id) => {
-    const newItems = item.filter((item) => item.id !== id);
+    const newItems = items.filter((item) => item.id !== id);
     setItem(newItems);
     setCount(count - 1);
   };
 
 
   const onClickAdd = (value) => {
-    const newDict = [];
-    for (let i in (item)){
-      for (let j in (item[i])) {
-          newDict.push(item[i][j]);
-        }
-      }
-
-    if (value === "" || newDict.includes(value)) {
-      setError((error) => true);
-      setErrorMessage(errorMessage);
-    } else {
      const newItems = [
-      ...item,
+      ...items,
         {
           value,
           isDone: false,
@@ -62,16 +51,20 @@ const Todo = () => {
     ];
     setItem(newItems);
     setCount((count) => count + 1);
-    }
   };
   
   const onClickDeleteComplited = () => {
-    const newItems = item.filter((it) => it.isDone === false);
+    const newItems = items.filter((it) => it.isDone === false);
     setItem(newItems);
   };
 
+  const onClickDeleteAll = () => {
+    setItem([]);
+    setCount(0)
+  };
 
-  const filterItems = (items, filter) => {
+
+  const filterItems = () => {
     if (filter === "all") {
       return items;
     } else if (filter === "active") {
@@ -85,40 +78,30 @@ const Todo = () => {
     setFilter(filter);
   };
 
-  const searchItem = (item) => {
-    let res = item.filter((item) => !item.isDone);
-    return res.length;
-  };
-    const addItemToLocalStorage = (item, count) => {
-      let sItem = JSON.stringify(item);
-      localStorage.setItem("item", sItem);
-      localStorage.setItem("count", JSON.stringify(count));
-    };
+  useEffect(() => {
+    localStorage.setItem("count", JSON.stringify(count));
+  }, [count]);
 
-    addItemToLocalStorage(item, count);
-    const visibleItems = filterItems(item, filter);
-    let activeItem = searchItem(item);
-
-    return (
+  return (
         <CardContent>
             <h1 className={styles.title}>TO DO LIST</h1>
             <Footer 
-              todo={activeItem}
               onFilterChange={onFilterChange}
               filter={filter}
-              count={item.filter((it) => it.isDone===false).length} 
+              filterItems={filterItems}
+              count={items.filter((it) => it.isDone===false).length} 
             />
             <InputItem 
               onClickAdd={onClickAdd} 
-              error={error}
-              errorMessage={errorMessage}
-              item={item}
+              items={items}
             />
             <ItemList
               onClickDone={onClickDone} 
               onClickDelete={onClickDelete}
-              item={visibleItems}
+              filterItems={filterItems}
+              items={items}
               onClickDeleteComplited={onClickDeleteComplited}
+              onClickDeleteAll={onClickDeleteAll}
             />
             
         </CardContent>);

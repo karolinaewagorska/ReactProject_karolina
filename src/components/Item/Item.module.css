@@ -1,8 +1,18 @@
 .item {
   color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1;
+  padding-top: 10px;
+}
+
+.deleted {
+  padding-top: 15px;
 }
 
 .done {
   text-decoration: line-through;
   color: gray;
 }
+

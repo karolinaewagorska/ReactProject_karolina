@@ -1,13 +1,12 @@
 import React from 'react';
 import Item from '../Item/Item';
 import styles from "./ItemList.module.css";
-import PropTypes from "prop-types";
 import Button from "@material-ui/core/Button";
 
-const ItemList = ({ item, onClickDone, onClickDelete, onClickDeleteComplited }) => (
+const ItemList = ({ onClickDone, onClickDelete, filterItems, onClickDeleteComplited, onClickDeleteAll }) => (
     <div>
         <ul>
-            {item.map((item) => <li key={item.value} className={styles.list}>
+            { filterItems().map((item) => <li key={item.value} className={styles.list}>
                 <Item 
                     value={item.value} 
                     isDone={item.isDone}
@@ -17,21 +16,23 @@ const ItemList = ({ item, onClickDone, onClickDelete, onClickDeleteComplited }) 
                     />
             </li>)}
         </ul>
-        <div>
+        <div className={styles.buttons}>
             <Button 
                 variant="contained"
+                className={styles.button}
                 onClick={ () => onClickDeleteComplited() }
             >
                 Clear Completed
             </Button>
+            <Button 
+                variant="contained"
+                className={styles.button}
+                onClick={ () => onClickDeleteAll() }
+            >
+                Clear All
+            </Button>
         </div>
-
     </div>
 );
-
-
-ItemList.propTypes = {
-    item: PropTypes.array.isRequired
-};
 
 export default ItemList;

@@ -3,14 +3,14 @@
   text-align: left;
 }
 
+@media (max-width: 1080px) {
+  .list {
+    margin: 0 auto;
+    width: 70%;
+  }
+}
+
 .buttons {
   display: flex;
   justify-content: space-around;
-}
-
-@media (max-width: 1080px) {
-  .list {
-    width: 70%;
-    margin: 0 auto;
-  }
 }

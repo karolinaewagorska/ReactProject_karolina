@@ -1,65 +1,46 @@
-import React, { useState, useEffect } from 'react';
-import Footer from '../Footer/Footer';
-import InputItem from '../InputItem/InputItem';
-import ItemList from '../ItemList/ItemList';
+import React, { useState, useEffect } from "react";
+import Footer from "../Footer/Footer";
+import InputItem from "../InputItem/InputItem";
+import ItemList from "../ItemList/ItemList";
 import CardContent from "@material-ui/core/CardContent";
 import styles from "./Todo.module.css";
 
 const Todo = () => {
   const initialState = {
-    items: [
-      {
-        value: "Create new app",
-        isDone: true,
-        id: 1
-      },
-      {
-        value: "Get new job",
-        isDone: false,
-        id: 2
-      },
-      {
-        value: "Find new friends",
-        isDone: true,
-        id: 3
-      },
-      {
-        value: "Learn new language",
-        isDone: false,
-        id: 4
-      }
-    ],
-    count: 4,
-    error: false
+    items: JSON.parse(localStorage.getItem("items")) || [],
+    filter: "all",
+    count: JSON.parse(localStorage.getItem("count")) || 0,
+    item: ""
   };
 
-  const [items, setItems] = useState(initialState.items);
+  const [items, setItem] = useState(initialState.items);
   const [count, setCount] = useState(initialState.count);
-  const [error, setError] = useState(initialState.error);
+  const [filter, setFilter] = useState(initialState.filter);
+
+  useEffect(() => {
+    localStorage.setItem("items", JSON.stringify(items));
+  }, [items]);
 
   const onClickDone = (id) => {
     const newItemList = (items.map((item) => {
       const newItem = { ...item };
-      if (item.id === id) {
-        newItem.isDone = !item.isDone;
+      if (newItem.id === id) {
+        newItem.isDone = !newItem.isDone;
       }
       return newItem;
     })
     );
-    setItems(newItemList);
+    setItem(newItemList);
   };
 
   const onClickDelete = (id) => {
     const newItems = items.filter((item) => item.id !== id);
-    setItems(newItems);
-    setCount((count) => count - 1);
+    setItem(newItems);
+    setCount(count - 1);
   };
 
 
   const onClickAdd = (value) => {
-    if (value === "") {
-      setError((error) => true);
-    } else {
      const newItems = [
       ...items,
         {
@@ -68,26 +49,61 @@ const Todo = () => {
           id: count + 1
         } 
     ];
-    setItems(newItems);
+    setItem(newItems);
     setCount((count) => count + 1);
-    }
   };
   
-    return (
+  const onClickDeleteComplited = () => {
+    const newItems = items.filter((it) => it.isDone === false);
+    setItem(newItems);
+  };
+
+  const onClickDeleteAll = () => {
+    setItem([]);
+    setCount(0);
+  };
+
+
+  const filterItems = () => {
+    if (filter === "all") {
+      return items;
+    } else if (filter === "active") {
+      return items.filter((item) => !item.isDone);
+    } else if (filter === "done") {
+      return items.filter((item) => item.isDone);
+    }
+  };
+
+  const onFilterChange  = (filter) => {
+    setFilter(filter);
+  };
+
+  useEffect(() => {
+    localStorage.setItem("count", JSON.stringify(count));
+  }, [count]);
+
+  return (
         <CardContent>
             <h1 className={styles.title}>TO DO LIST</h1>
+            <Footer 
+              onFilterChange={onFilterChange}
+              filter={filter}
+              filterItems={filterItems}
+              count={items.filter((it) => it.isDone===false).length} 
+            />
             <InputItem 
               onClickAdd={onClickAdd} 
-              error={error}
+              items={items}
             />
-            <ItemList 
-              items={items} 
+            <ItemList
               onClickDone={onClickDone} 
               onClickDelete={onClickDelete}
+              filterItems={filterItems}
+              items={items}
+              onClickDeleteComplited={onClickDeleteComplited}
+              onClickDeleteAll={onClickDeleteAll}
             />
-            <Footer 
-              count={count} 
-            />
+            
         </CardContent>);
 };
 

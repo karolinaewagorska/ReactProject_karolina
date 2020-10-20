@@ -1,28 +1,181 @@
 .wrap {
-  text-align: left;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
   font-family: 'Courier New', Courier, monospace;
+  margin: auto;
+  padding: 20px;
 }
 
 .preload {
-  position: relative;
-  left: 4em;
-  top: 2em;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 500px;
 }
 
 .title {
   text-align: center;
   font-weight: bold;
   margin-bottom: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 35px;
 }
 
 .repo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
   font-size: 25px;
   font-weight: 300;
-  margin: 0 auto;
 }
 
-.repolist {
+.info {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+}
+
+.bio {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+}
+
+.name {
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+}
+
+.image {
+  width: 220px;
+  height: auto;
+}
+
+.photo {
+  width: 75%;
+  height: 75%;
+  border-radius: 80%;
+}
+
+.repoList {
+  list-style-type: none;
+  padding: 10px;
+  width: 400px;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.name:hover,
+.link:hover {
+  opacity: .5;
+}
+
+.repo_info {
+  display: flex;
+  width: 95%;
+  margin: 5px;
+  flex-direction: column;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+.language {
+  min-width: 80px;
   font-size: 20px;
-  font-weight: 200;
-  margin-bottom: 10px;
+}
+
+.updated {
+  font-size: 15px;
+}
+
+.python::before,
+.js::before {
+  content: "";
+  margin-right: 5px;
+}
+
+.python::before {
+  background-image: url("./Media/python.svg");
+  background-size: 14px;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  display: inline-block;
+  width: 15px;
+  height: 25px;
+  content: "";
+}
+
+.js::before {
+  background-image: url("./Media/javascript.svg");
+  background-size: 14px;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  display: inline-block;
+  width: 15px;
+  height: 25px;
+  content: "";
+}
+
+.star,
+.fork {
+  font-size: 15px;
+  margin: 5px;
+}
+
+.star::before {
+  background-image: url("./Media/black-star-silhouette.svg");
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  display: inline-block;
+  width: 10px;
+  height: 20px;
+  content: "";
+}
+
+.fork::before {
+  background-image: url("./Media/code-fork-symbol.svg");
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  display: inline-block;
+  width: 10px;
+  height: 20px;
+  content: "";
+}
+
+@media (max-width: 1080px) {
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .photo {
+    width: 60%;
+    height: 60%;
+  }
+}
+
+@media (max-width: 760px) {
+  .title {
+    font-size: 20px;
+  }
+
+  .repo {
+    font-size: 15px;
+  }
+
+  .photo {
+    width: 40%;
+    height: 40%;
+  }
 }

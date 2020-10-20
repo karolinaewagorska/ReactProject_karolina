@@ -1,35 +1,54 @@
 import React from 'react';
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import styles from "./InputItem.module.css";
 
 class InputItem extends React.Component {
+    
     state = {
         inputValue: "",
-        error: false
+        error: false,
+        errorMessage: "",
+        items: []
     };
 
     onButtonClick = () => {
-        this.setState({
-            inputValue: ""
-        });
-
-        this.props.onClickAdd(this.state.inputValue);
+        if (this.state.inputValue !== "") {
+            if (this.props.items.find((item) => this.state.inputValue === item.value)) {
+                this.setState({
+                error: true,
+                errorMessage: "Something went wrong..." 
+                });
+            } else {
+                this.setState({
+                inputValue: "",
+                error: false,
+                errorMessage: ""
+            });
+            this.props.onClickAdd(this.state.inputValue);
+            }
+        } else {
+            this.setState({
+                error: true,
+                errorMessage: "Something went wrong..."
+            });
+        }
     }
 
     render() {
-        const { onClickAdd } = this.props;
 
-        return (<div>
+        return (<div className={styles.field}>
             <TextField
-                label="Add New Task:"
+                label="Add New Task"
                 id="margin-dense"
                 margin="dense"
                 fullWidth
                 variant="outlined"
                 value={this.state.inputValue}
-                error={this.props.error}
+                error={this.state.error}
+                helperText={this.state.errorMessage}
                 onChange={(event) => this.setState({ inputValue: event.target.value })}
-            />   
+            /> 
             <Button 
                 variant="contained"
                 fullWidth

@@ -32,7 +32,7 @@ class InputItem extends React.Component {
                 error: true,
                 errorMessage: "Something went wrong..."
             });
-        };
+        }
     }
 
     render() {

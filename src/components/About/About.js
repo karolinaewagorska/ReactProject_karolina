@@ -40,7 +40,7 @@ class About extends React.Component {
     requestRepolist = (perPage, selectedPage) => {
         octokit.repos.listForUser({
             username: "karolinaewagorska",
-            per_page: perPage,  /* eslint-disable*/
+            per_page: perPage,  /*eslint camelcase: ["error", {properties: "never"}]*/
             page: selectedPage
         }).then(({data}) => {
             this.setState({

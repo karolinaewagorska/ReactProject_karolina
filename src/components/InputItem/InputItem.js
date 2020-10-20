@@ -13,7 +13,7 @@ class InputItem extends React.Component {
     };
 
     onButtonClick = () => {
-        if (this.state.inputValue !== '') {
+        if (this.state.inputValue !== "") {
             if (this.props.items.find((item) => this.state.inputValue === item.value)) {
                 this.setState({
                 error: true,
@@ -23,10 +23,10 @@ class InputItem extends React.Component {
                 this.setState({
                 inputValue: "",
                 error: false,
-                errorMessage: ''
+                errorMessage: ""
             });
             this.props.onClickAdd(this.state.inputValue);
-            };
+            }
         } else {
             this.setState({
                 error: true,

@@ -66,7 +66,7 @@ class Contacts extends React.Component {
 
         </div>
 
-        )
+        );
     }
 }
 

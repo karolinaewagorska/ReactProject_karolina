@@ -103,7 +103,7 @@ class About extends React.Component {
                                             <div className={styles.git_bio}>
                                                 <span className={styles.fork}>{repo.forks_count}</span>
                                                 <span className={styles.star}>{repo.stargazers_count}</span>
-                                                <span className={styles.updated}>{" Updated: "+ new Date(repo.updated_at).toLocaleDateString('en-GB')}</span>
+                                                <span className={styles.updated}>{" Updated: "+ new Date(repo.updated_at).toLocaleDateString("en-GB")}</span>
                                             </div>
                                         </div>
                                     </li>))}

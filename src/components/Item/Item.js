@@ -4,13 +4,13 @@ import styles from "./Item.module.css";
 import Checkbox from "@material-ui/core/Checkbox";
 import DeleteRoundedIcon from "@material-ui/icons/DeleteRounded";
 import PropTypes from "prop-types";
-import { withStyles } from '@material-ui/core/styles';
-import { green } from '@material-ui/core/colors';
+import { withStyles } from "@material-ui/core/styles";
+import { green } from "@material-ui/core/colors";
 
 const GreenCheckbox = withStyles({
     root: {
       color: green[400],
-      '&$checked': {
+      "&$checked": {
         color: green[600],
       },
     },
@@ -38,8 +38,7 @@ class Item extends React.Component {
                 className={styles.deleted}
                 onClick={() => onClickDelete(id)}
             />
-        </div>)
-                
+        </div>);
     }
 }
 

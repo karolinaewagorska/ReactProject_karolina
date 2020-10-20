@@ -43,7 +43,7 @@
 }
 
 .link,
-.phone, 
+.phone,
 .location {
   color: black;
   font-family: 'Courier New', Courier, monospace;
@@ -76,4 +76,4 @@
     flex-direction: column;
     margin: auto;
   }
-} 
+}

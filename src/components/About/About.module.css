@@ -50,15 +50,9 @@
   color: black;
 }
 
-.name:hover,
-.link:hover {
-  opacity: 0.5;
-}
-
 .image {
   width: 220px;
   height: auto;
-
 }
 
 .photo {
@@ -78,6 +72,11 @@
   color: black;
 }
 
+.name:hover,
+.link:hover {
+  opacity: .5;
+}
+
 .repo_info {
   display: flex;
   width: 95%;
@@ -85,11 +84,6 @@
   flex-direction: column;
   border: 1px solid;
   border-radius: 5px;
-}
-
-.repo {
-  display: flex;
-  flex-direction: column;
 }
 
 .language {
@@ -113,9 +107,9 @@
   background-repeat: no-repeat;
   background-position: right bottom;
   display: inline-block;
-  width: 15px; 
+  width: 15px;
   height: 25px;
-  content:"";
+  content: "";
 }
 
 .js::before {
@@ -129,9 +123,10 @@
   content:"";
 }
 
-.star, .fork {
+.star, 
+.fork {
   font-size: 15px;
-  margin: 5px;;
+  margin: 5px;
 }
 
 .star::before {
@@ -140,9 +135,9 @@
   background-repeat: no-repeat;
   background-position: right bottom;
   display: inline-block;
-  width: 10px; 
+  width: 10px;
   height: 20px;
-  content:"";
+  content: "";
 }
 
 .fork::before {
@@ -153,7 +148,7 @@
   display: inline-block;
   width: 10px; 
   height: 20px;
-  content:"";
+  content: "";
 }
 
 @media (max-width: 1080px) {
@@ -183,4 +178,4 @@
     width: 40%;
     height: 40%;
   }
-} 
+}

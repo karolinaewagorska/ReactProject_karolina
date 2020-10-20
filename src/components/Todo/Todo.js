@@ -60,7 +60,7 @@ const Todo = () => {
 
   const onClickDeleteAll = () => {
     setItem([]);
-    setCount(0)
+    setCount(0);
   };
 
 

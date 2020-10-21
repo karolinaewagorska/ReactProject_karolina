@@ -65,19 +65,19 @@ body {
 }
 
 @media (max-width: 1080px) {
+  .content {
+    min-width: 100vh;
+  }
+
   .menu {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  .content {
-    min-width: 100vh;
-  }
 }
 
 @media (max-width: 780px) {
-
   .logo {
     display: flex;
     flex-direction: column;

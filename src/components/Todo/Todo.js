@@ -83,7 +83,7 @@ const Todo = () => {
   }, [count]);
 
   return (
-        <CardContent>
+        <CardContent className={styles.wrap}>
             <h1 className={styles.title}>TO DO LIST</h1>
             <Footer 
               onFilterChange={onFilterChange}

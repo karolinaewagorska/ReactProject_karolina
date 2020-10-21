@@ -24,7 +24,7 @@ const App = () => (
     <div className={styles.logo}>
           <span>developed in</span>
           <img className={styles.icon} src={require("./Media/logo.jpg")} alt="logo" />
-      </div>
+    </div>
   </Router>);
 
 export default App;

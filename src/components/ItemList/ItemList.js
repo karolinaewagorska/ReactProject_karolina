@@ -24,6 +24,7 @@ const ItemList = ({ onClickDone, onClickDelete, filterItems, onClickDeleteCompli
             >
                 Clear Completed
             </Button>
+            <p className={styles.space}></p>
             <Button 
                 variant="contained"
                 className={styles.button}

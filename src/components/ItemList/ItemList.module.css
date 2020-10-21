@@ -6,11 +6,18 @@
 @media (max-width: 1080px) {
   .list {
     margin: 0 auto;
-    width: 70%;
+    width: 60%;
   }
 }
 
 .buttons {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.space {
+  height: 5px;
 }

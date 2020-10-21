@@ -170,6 +170,11 @@
     font-size: 20px;
   }
 
+  .repo_info {
+    width: 60%;
+    margin: auto;
+  }
+
   .repo {
     font-size: 15px;
   }

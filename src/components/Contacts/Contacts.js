@@ -15,7 +15,6 @@ class Contacts extends React.Component {
                     </div>
                 </div>
             </div>
-            <div className={styles.content}>
                 <div className={styles.contact}>
                     <img className={styles.icon} src={require("./Media/email.svg")} alt="email" />
                     <div className={styles.mail}>
@@ -62,8 +61,6 @@ class Contacts extends React.Component {
                             GitHub</a>
                     </div>
                 </div>
-            </div>
-
         </div>
 
         );

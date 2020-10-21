@@ -1,10 +1,9 @@
 body {
   background-image: url('./Media/wall4.jpg');
-  min-height: 100vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  width: 100%;
+  background-attachment: fixed;
 }
 
 .wrap {
@@ -13,6 +12,7 @@ body {
   margin: auto;
   max-height: 90%;
   padding: 50px;
+  min-height: 100vh;
 }
 
 .logo {
@@ -31,7 +31,7 @@ body {
 }
 
 .menu {
-  width: 650px;
+  width: auto;
   display: flex;
   justify-content: center;
   margin: auto;
@@ -59,11 +59,10 @@ body {
 }
 
 .content {
-  grid-area: content;
-  min-width: 650px;
-  min-height: 680px;
+  width: 50%;
+  min-height: 55vh;
   margin: auto;
-  margin-bottom: 20px;
+  padding: 20px;
 }
 
 @media (max-width: 1080px) {
@@ -76,6 +75,10 @@ body {
 }
 
 @media (max-width: 780px) {
+  .content {
+    width: 100%;
+  }
+
   .logo {
     display: flex;
     flex-direction: column;

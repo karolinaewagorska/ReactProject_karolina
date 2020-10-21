@@ -6,7 +6,8 @@
 @media (max-width: 1080px) {
   .list {
     margin: 0 auto;
-    width: 60%;
+    width: 90%;
+    margin-left: 0;
   }
 }
 

@@ -46,6 +46,19 @@
   text-decoration: underline;
 }
 
+@media (max-width: 1080px) {
+  .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .icon {
+    margin: auto;
+    padding-bottom: 10px;
+  }
+}
+
 @media (max-width: 780px) {
   .title {
     font-size: 20px;
@@ -53,13 +66,9 @@
 
   .icon {
     width: 15%;
-    padding: 5px;
   }
 
-  .contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
+  .link {
+    font-size: 15px;
   }
 }

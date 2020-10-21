@@ -9,8 +9,7 @@ body {
 .wrap {
   display: flex;
   flex-flow: column;
-  margin: auto;
-  max-height: 90%;
+  margin: 10px;
   padding: 50px;
   min-height: 100vh;
 }
@@ -34,7 +33,7 @@ body {
   width: auto;
   display: flex;
   justify-content: center;
-  margin: auto;
+  margin: 20px;
 }
 
 .link {
@@ -61,11 +60,15 @@ body {
 .content {
   width: 50%;
   min-height: 55vh;
-  margin: auto;
   padding: 20px;
+  margin: 20px auto;
 }
 
 @media (max-width: 1080px) {
+  .content {
+    min-width: 100vh;
+  }
+
   .menu {
     display: flex;
     flex-direction: column;
@@ -75,11 +78,6 @@ body {
 }
 
 @media (max-width: 780px) {
-  .content {
-    width: 100%;
-    padding: 5px;
-  }
-
   .logo {
     display: flex;
     flex-direction: column;
